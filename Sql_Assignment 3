@@ -1,0 +1,13 @@
+1. Write an SQL query to print the FIRST_NAME from Worker table after removing
+   white spaces from the right side.
+   SELECT RTRIM(FIRST_NAME) AS FIRST_NAME_TRIMMED
+   FROM Worker;
+
+2. Write an SQL query that fetches the unique values of DEPARTMENT from Worker
+   table and prints its length.
+   SELECT DISTINCT DEPARTMENT, LENGTH(DEPARTMENT) AS DEPARTMENT_LENGTH
+   FROM Worker;
+
+3. Write an SQL query to fetch nth max salaries from a table.
+   SELECT DISTINCT SALARY FROM worker 
+   order by salary desc limit 1,1; 
