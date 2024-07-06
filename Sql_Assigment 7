@@ -1,0 +1,9 @@
+1. Write an SQL query to fetch duplicate records having matching data in some fields of a table.
+   SELECT *, COUNT(*) AS DuplicateCount
+   FROM YourTable
+   GROUP BY Column1, Column2,
+   HAVING DuplicateCount > 1
+   ORDER BY Column1, Column2,
+
+2. Write an SQL query to clone a new table from another table.
+   SELECT * INTO new_table_name FROM original_table_name;
