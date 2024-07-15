@@ -1,0 +1,13 @@
+1. Write an SQL query to fetch intersecting records of two tables.
+   SELECT table1.column1, table1.column2, table2.column3, table2.column4
+   FROM table1
+   INNER JOIN table2 ON table1.id = table2.id;
+
+2. Write an SQL query to show records from one table that another table does not have.
+   SELECT *
+   FROM table1
+   WHERE NOT EXISTS (
+   SELECT 1
+   FROM table2
+   WHERE table1.id = table2.id
+   );
