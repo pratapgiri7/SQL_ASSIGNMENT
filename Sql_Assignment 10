@@ -1,0 +1,19 @@
+1. Write an SQL query to determine the 5th highest salary without using TOP or limit method.
+   SELECT salary
+   FROM employee e1
+   WHERE 4 = (
+   SELECT COUNT(DISTINCT salary)
+   FROM employee e2
+   WHERE e2.salary > e1.salary
+   );
+
+2. Write an SQL query to fetch the list of employees with the same salary.
+   SELECT employee_id, employee_name, salary
+   FROM employee
+   WHERE salary IN (
+   SELECT salary
+   FROM employee
+   GROUP BY salary
+   HAVING COUNT(*) > 1
+   )
+   ORDER BY salary, employee_name;
